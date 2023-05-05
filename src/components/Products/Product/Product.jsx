@@ -1,14 +1,18 @@
 import React from 'react'
-import { Cart,CartMedia,CartContent,CartActions,Typography,IconButton } from '@material-ui/core';
+import { Card,CardMedia,CardContent,CardActions,Typography,IconButton } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
+
+import useStyles from './styles';
 
 
 const Product = ({product}) => {
+  const classes=useStyles();
+
   return (
-   <cart className={classes.root}>
-      <CartMedia className={classes.media} image='' title={Products.name}></CartMedia> 
+   <card className={classes.root}>
+      <CardMedia className={classes.media} image='' title={product.name} />
       <cardContent>
-        <div classNmae={classes.cardContent}>
+        <div classNmae={classes.cartContent}>
           <Typography varient="h5" gutterBottom>
             {Product.name}
           </Typography>
@@ -16,15 +20,15 @@ const Product = ({product}) => {
             {Product.price}
           </Typography>
         </div>
-        <Tipograpy varient='h2' color='textSecondary'>{product.description}</Tipograpy>
+        <Typography varient='h2' color='textSecondary'>{product.description}</Typography>
       </cardContent>
-      <CartActions disableSpacing className={classes.cardActions}>
+      <CardActions disableSpacing className={classes.cartActions}>
         <IconButton area-label="Add to Cart">
           <AddShoppingCart/>
         </IconButton>
 
-      </CartActions>
-   </cart>
+      </CardActions>
+   </card>
   )
 }
 
